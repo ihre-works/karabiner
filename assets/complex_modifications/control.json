@@ -1,0 +1,25 @@
+{
+    "title": "Ctrl",
+    "rules": [
+        {
+            "description": "Ctrl+H -> DeleteBackspace",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "delete_or_backspace" } ]
+                }
+            ]
+        },
+        {
+            "description": "Ctrl+M -> Enter",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "enter" } ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "title": "日本語キーボード用",
+    "rules": [
+        {
+            "description": "Caps_lock -> Cmd+Ctrl+Opt",
+            "manipulators": [
+                {
+                    "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "left_control", "modifiers": [ "left_command", "left_option" ] } ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Fn を単体で押したときに，かな を送信",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "japanese_kana" } ]
+                }
+            ]
+        },
+        {
+            "description": "右-Command を単体で押したときに，Escape を送信",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_command", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "right_command", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "escape" } ]
+                }
+            ]
+        },
+        {
+            "description": "right_shift -> Cmd+Opt",
+            "manipulators": [
+                {
+                    "from": { "key_code": "right_shift", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
