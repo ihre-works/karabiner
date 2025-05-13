@@ -26,7 +26,24 @@
             ]
         },
         {
-            "description": "右-Command を単体で押したときに，Escape を送信",
+            "description": "左-Command を単体で押したときに，英数, Escape を送信",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "left_command", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "left_command", "lazy": true } ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "右-Command を単体で押したときに，英数, Escape を送信",
             "manipulators": [
                 {
                     "type": "basic",
@@ -35,7 +52,10 @@
                         "basic.to_if_alone_timeout_milliseconds": 2000
                     },
                     "to": [ { "key_code": "right_command", "lazy": true } ],
-                    "to_if_alone": [ { "key_code": "escape" } ]
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
                 }
             ]
         },
