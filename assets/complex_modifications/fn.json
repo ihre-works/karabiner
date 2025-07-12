@@ -67,12 +67,12 @@
             ]
         },
         {
-            "description": "Fn + U -> Context Menu (Ctrl+Opt+Cmd+U)",
+            "description": "Fn + U -> Context Menu (Opt+Cmd+U)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": { "key_code": "u", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
-                    "to": [ { "key_code": "u", "modifiers": [ "command", "control", "option" ] } ]
+                    "to": [ { "key_code": "u", "modifiers": [ "command", "option" ] } ]
                 }
             ]
         },
