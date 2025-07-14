@@ -77,8 +77,13 @@
             ]
         },
         {
-            "description": "Fn + A/W/S/E/D/R/F/T/G/Z/X/C/V/B/N -> アプリケーション・ランチャ",
+            "description": "Fn + SPC/A/W/S/E/D/R/F/T/G/Z/X/C/V/B/N -> アプリケーション・ランチャ",
             "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "spacebar", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
+                    "to": [ { "shell_command": "~/.config/karabiner/app/do-spc" } ]
+                },
                 {
                     "type": "basic",
                     "from": { "key_code": "a", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },

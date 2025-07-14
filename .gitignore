@@ -1,3 +1,4 @@
 automatic_backups
 app/do-[A-Za-z]
+app/do-spc
 .DS_Store
