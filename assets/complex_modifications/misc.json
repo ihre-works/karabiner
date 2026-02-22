@@ -2,26 +2,34 @@
     "title": "日本語キーボード用",
     "rules": [
         {
+            "description": "Return を他のキーと同時押しで Fn",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "return_or_enter", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "return_or_enter" } ]
+                }
+            ]
+        },
+        {
+            "description": "Tab を他のキーと同時押しで Fn",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "tab" } ]
+                }
+            ]
+        },
+        {
             "description": "Caps_lock -> Cmd+Ctrl+Opt",
             "manipulators": [
                 {
                     "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
                     "to": [ { "key_code": "left_control", "modifiers": [ "left_command", "left_option" ] } ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "Fn を単体で押したときに，かな を送信",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 2000
-                    },
-                    "to": [ { "key_code": "fn", "lazy": true } ],
-                    "to_if_alone": [ { "key_code": "japanese_kana" } ]
                 }
             ]
         },

@@ -2,6 +2,20 @@
     "title": "Fn + *",
     "rules": [
         {
+            "description": "Fn 単体 to LCmd",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "left_command" } ]
+                }
+            ]
+        },
+        {
             "description": "Fn + H/J/K/L -> カーソル移動",
             "manipulators": [
                 {
@@ -57,6 +71,26 @@
             ]
         },
         {
+            "description": "Fn + M -> Delete_Forward",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "delete_forward" } ]
+                }
+            ]
+        },
+        {
+            "description": "Fn + M -> Delete",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "delete" } ]
+                }
+            ]
+        },
+        {
             "description": "Fn + M -> DeleteOrBackspace",
             "manipulators": [
                 {
@@ -67,12 +101,12 @@
             ]
         },
         {
-            "description": "Fn + U -> Context Menu (Opt+Cmd+U)",
+            "description": "Fn + U -> Context Menu (F12)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": { "key_code": "u", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
-                    "to": [ { "key_code": "u", "modifiers": [ "command", "option" ] } ]
+                    "to": [ { "key_code": "f12" } ]
                 }
             ]
         },
@@ -220,45 +254,25 @@
             "description": "(Finder, Skim)Fn + Ctrl + I/O -> タブ切り替え",
             "manipulators": [
                 {
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ]
-                        }
-                    ],
+                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ] } ],
                     "type": "basic",
                     "from": { "key_code": "i", "modifiers": { "mandatory": [ "fn", "control" ] } },
                     "to": [ { "key_code": "tab", "modifiers": [ "control", "shift" ] } ]
                 },
                 {
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ]
-                        }
-                    ],
+                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ] } ],
                     "type": "basic",
                     "from": { "key_code": "o", "modifiers": { "mandatory": [ "fn", "control" ] } },
                     "to": [ { "key_code": "tab", "modifiers": [ "control" ] } ]
                 },
                 {
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [ "com\\.apple\\.finder" ]
-                        }
-                    ],
+                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "com\\.apple\\.finder" ] } ],
                     "type": "basic",
                     "from": { "key_code": "i", "modifiers": { "mandatory": [ "fn", "control" ] } },
                     "to": [ { "key_code": "tab", "modifiers": [ "control", "shift" ] } ]
                 },
                 {
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [ "com\\.apple\\.finder" ]
-                        }
-                    ],
+                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "com\\.apple\\.finder" ] } ],
                     "type": "basic",
                     "from": { "key_code": "o", "modifiers": { "mandatory": [ "fn", "control" ] } },
                     "to": [ { "key_code": "tab", "modifiers": [ "control" ] } ]

@@ -2,6 +2,57 @@
     "title": "IME",
     "rules": [
         {
+            "description": "Fn 単体 to LCmd",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "left_command" } ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt Only to Escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "right_option", "lazy": true } ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt+J to かな",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": [ { "key_code": "japanese_kana" } ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt+L to 英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": [ { "key_code": "japanese_eisuu" } ]
+                }
+            ]
+        },
+        {
             "description": "Ctrl+J to KANA if english mode",
             "manipulators": [
                 {

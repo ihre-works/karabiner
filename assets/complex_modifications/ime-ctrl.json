@@ -1,0 +1,62 @@
+{
+    "title": "IME: Ctrl+J/L で切り替え (英数を ROpt にマッピング）",
+    "rules": [
+        {
+            "description": "ROpt Only to Escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to": [ { "key_code": "right_option", "lazy": true } ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt+J to Ctrl+J",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } }
+                }
+            ]
+        },
+        {
+            "description": "ROpt+L to Ctrl+L",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } }
+                }
+            ]
+        },
+        {
+            "description": "Ctrl+J to KANA",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "japanese_kana" } ]
+                }
+            ]
+        },
+        {
+            "description": "Ctrl+L to EISU",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "japanese_eisuu" } ]
+                }
+            ]
+        }
+    ]
+}

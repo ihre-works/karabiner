@@ -4,17 +4,17 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "右-Command を単体で押したときに，英数, Escape を送信",
+                        "description": "ROpt Only to Escape",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_command",
+                                    "key_code": "right_option",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
                                 "to": [
                                     {
-                                        "key_code": "right_command",
+                                        "key_code": "right_option",
                                         "lazy": true
                                     }
                                 ],
@@ -27,24 +27,27 @@
                         ]
                     },
                     {
-                        "description": "左-Command を単体で押したときに，英数, Escape を送信",
+                        "description": "ROpt+J to かな",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "j",
+                                    "modifiers": { "mandatory": ["right_option"] }
                                 },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    { "key_code": "japanese_eisuu" },
-                                    { "key_code": "escape" }
-                                ],
+                                "to": [{ "key_code": "japanese_kana" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ROpt+L to 英数",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "key_code": "japanese_eisuu" }],
                                 "type": "basic"
                             }
                         ]
@@ -135,26 +138,6 @@
                         ]
                     },
                     {
-                        "description": "Fn を単体で押したときに，かな を送信",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "fn",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
-                                "to": [
-                                    {
-                                        "key_code": "fn",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "japanese_kana" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "right_shift -> Cmd+Opt",
                         "manipulators": [
                             {
@@ -173,110 +156,27 @@
                         ]
                     },
                     {
-                        "description": "Fn + H/J/K/L -> カーソル移動",
+                        "description": "Fn 単体 to LCmd",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
+                                "to": [
+                                    {
+                                        "key_code": "fn",
+                                        "lazy": true
                                     }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "right_arrow" }],
+                                ],
+                                "to_if_alone": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Fn + I/O -> PageUp/PageDn",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "page_up" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "page_down" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Fn + Comma/Period -> Home/End",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "home" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Fn + M -> DeleteOrBackspace",
+                        "description": "Fn + M -> Delete_Forward",
                         "manipulators": [
                             {
                                 "from": {
@@ -286,13 +186,13 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "delete_or_backspace" }],
+                                "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Fn + U -> Context Menu (Ctrl+Opt+Cmd+U)",
+                        "description": "Fn + U -> Context Menu (F12)",
                         "manipulators": [
                             {
                                 "from": {
@@ -302,19 +202,25 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "u",
-                                        "modifiers": ["command", "control", "option"]
-                                    }
-                                ],
+                                "to": [{ "key_code": "f12" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Fn + A/W/S/E/D/R/F/T/G/Z/X/C/V/B/N -> アプリケーション・ランチャ",
+                        "description": "Fn + SPC/A/W/S/E/D/R/F/T/G/Z/X/C/V/B/N -> アプリケーション・ランチャ",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "shell_command": "~/.config/karabiner/app/do-spc" }],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "a",
@@ -478,6 +384,109 @@
                                     }
                                 },
                                 "to": [{ "shell_command": "~/.config/karabiner/app/do-n" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fn + H/J/K/L -> カーソル移動",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fn + I/O -> PageUp/PageDn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "page_up" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "page_down" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fn + Comma/Period -> Home/End",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "home" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "end" }],
                                 "type": "basic"
                             }
                         ]
@@ -687,6 +696,22 @@
                         ]
                     },
                     {
+                        "description": "Ctrl+[ to 英数 and Escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    { "key_code": "japanese_eisuu" },
+                                    { "key_code": "escape" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Ctrl+H -> DeleteBackspace",
                         "manipulators": [
                             {
@@ -749,7 +774,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "escape" }]
+                            "to": [{ "key_code": "japanese_eisuu" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
@@ -814,10 +839,6 @@
                         {
                             "from": { "key_code": "caps_lock" },
                             "to": [{ "key_code": "left_control" }]
-                        },
-                        {
-                            "from": { "key_code": "escape" },
-                            "to": [{ "key_code": "grave_accent_and_tilde" }]
                         },
                         {
                             "from": { "key_code": "international1" },
@@ -986,7 +1007,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "japanese_eisuu" }]
+                            "to": [{ "key_code": "right_option" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
@@ -1023,11 +1044,44 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "escape" }]
+                            "to": [{ "key_code": "right_option" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
                             "to": [{ "key_code": "fn" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "caps_lock" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 512,
+                        "vendor_id": 2131
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_pc_nfer" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_pc_xfer" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                         },
                         {
                             "from": { "key_code": "left_command" },
