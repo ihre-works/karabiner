@@ -19,6 +19,16 @@
             ]
         },
         {
+            "description": "ROpt+M to ReturnOrEnter",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": [ { "key_code": "return_or_enter" } ]
+                }
+            ]
+        },
+        {
             "description": "ROpt+J to かな",
             "manipulators": [
                 {
