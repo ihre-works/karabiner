@@ -27,6 +27,19 @@
                         ]
                     },
                     {
+                        "description": "ROpt+M to ReturnOrEnter",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "key_code": "return_or_enter" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "ROpt+J to かな",
                         "manipulators": [
                             {
@@ -176,7 +189,7 @@
                         ]
                     },
                     {
-                        "description": "Fn + M -> Delete_Forward",
+                        "description": "Fn + M -> DeleteOrBackspace",
                         "manipulators": [
                             {
                                 "from": {
@@ -186,7 +199,7 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "delete_forward" }],
+                                "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             }
                         ]
@@ -710,32 +723,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Ctrl+H -> DeleteBackspace",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [{ "key_code": "delete_or_backspace" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Ctrl+M -> Enter",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [{ "key_code": "enter" }],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
@@ -854,7 +841,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "japanese_eisuu" }]
+                            "to": [{ "key_code": "right_option" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
@@ -968,7 +955,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "escape" }]
+                            "to": [{ "key_code": "right_option" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
