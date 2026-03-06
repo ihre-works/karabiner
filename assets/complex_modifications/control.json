@@ -12,12 +12,12 @@
             ]
         },
         {
-            "description": "Ctrl+M -> Enter",
+            "description": "Ctrl+M -> ReturnOrEnter",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": { "key_code": "m", "modifiers": { "mandatory": [ "control" ] } },
-                    "to": [ { "key_code": "enter" } ]
+                    "to": [ { "key_code": "return_or_enter" } ]
                 }
             ]
         }
