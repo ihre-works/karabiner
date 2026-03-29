@@ -27,6 +27,19 @@
                         ]
                     },
                     {
+                        "description": "ROpt+H to DeleteOrBackspace",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "key_code": "delete_or_backspace" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "ROpt+M to ReturnOrEnter",
                         "manipulators": [
                             {
