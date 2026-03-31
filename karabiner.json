@@ -4,35 +4,15 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "ROpt Only to Escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
-                                "to": [
-                                    {
-                                        "key_code": "right_option",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    { "key_code": "japanese_eisuu" },
-                                    { "key_code": "escape" }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "ROpt+H to DeleteOrBackspace",
+                        "description": "Ctrl+H -> DeleteOrBackspace",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
@@ -40,14 +20,19 @@
                         ]
                     },
                     {
-                        "description": "ROpt+M to ReturnOrEnter",
+                        "description": "ROpt+H to Control+H",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "m",
+                                    "key_code": "h",
                                     "modifiers": { "mandatory": ["right_option"] }
                                 },
-                                "to": [{ "key_code": "return_or_enter" }],
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -202,7 +187,7 @@
                         ]
                     },
                     {
-                        "description": "Fn + M -> DeleteOrBackspace",
+                        "description": "Fn + M -> DeleteForward",
                         "manipulators": [
                             {
                                 "from": {
@@ -212,13 +197,13 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "delete_or_backspace" }],
+                                "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Fn + U -> Context Menu (F12)",
+                        "description": "Fn + U -> Control+Button1",
                         "manipulators": [
                             {
                                 "from": {
@@ -228,7 +213,12 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "f12" }],
+                                "to": [
+                                    {
+                                        "key_code": "button1",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]

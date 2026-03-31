@@ -2,11 +2,11 @@
     "title": "Ctrl",
     "rules": [
         {
-            "description": "Ctrl+H -> DeleteBackspace",
+            "description": "Ctrl+H -> DeleteOrBackspace",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "control" ] } },
+                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "control" ], "optional" : [ "any" ] } },
                     "to": [ { "key_code": "delete_or_backspace" } ]
                 }
             ]
@@ -16,7 +16,7 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "control" ] } },
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "control" ], "optional" : [ "any" ] } },
                     "to": [ { "key_code": "return_or_enter" } ]
                 }
             ]

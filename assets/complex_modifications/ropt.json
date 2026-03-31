@@ -29,6 +29,16 @@
             ]
         },
         {
+            "description": "ROpt+H to Control+H",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": [ { "key_code": "h", "modifiers": [ "left_control" ] } ]
+                }
+            ]
+        },
+        {
             "description": "ROpt+M to ReturnOrEnter",
             "manipulators": [
                 {
