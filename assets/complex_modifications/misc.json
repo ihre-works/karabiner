@@ -1,5 +1,5 @@
 {
-    "title": "日本語キーボード用",
+    "title": "Misc",
     "rules": [
         {
             "description": "Return を他のキーと同時押しで Fn",
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "description": "左-Command を単体で押したときに，英数, Escape を送信",
+            "description": "LCmd Only -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
@@ -51,29 +51,25 @@
             ]
         },
         {
-            "description": "右-Command を単体で押したときに，英数, Escape を送信",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "right_command", "modifiers": { "optional": [ "any" ] } },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 2000
-                    },
-                    "to": [ { "key_code": "right_command", "lazy": true } ],
-                    "to_if_alone": [
-                        { "key_code": "japanese_eisuu" },
-                        { "key_code": "escape" }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "right_shift -> Cmd+Opt",
+            "description": "RightShift -> Cmd+Opt",
             "manipulators": [
                 {
                     "from": { "key_code": "right_shift", "modifiers": { "optional": [ "any" ] } },
                     "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ],
                     "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "ESC -> 英数,ESC",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "escape" },
+                    "to": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
                 }
             ]
         }

@@ -1,14 +1,14 @@
 {
-    "title": "IME(ROpt+J/L で切り替え、ROpt は英数にマッピング）",
+    "title": "Right Option",
     "rules": [
         {
-            "description": "ROpt Only to Escape",
+            "description": "ROpt Only -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
                     "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 2000
+                        "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to": [ { "key_code": "right_option", "lazy": true } ],
                     "to_if_alone": [
@@ -19,7 +19,7 @@
             ]
         },
         {
-            "description": "ROpt+H to Control+H",
+            "description": "ROpt+H -> Control+H",
             "manipulators": [
                 {
                     "type": "basic",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "description": "ROpt+M to ReturnOrEnter",
+            "description": "ROpt+M -> ReturnOrEnter",
             "manipulators": [
                 {
                     "type": "basic",
@@ -39,7 +39,17 @@
             ]
         },
         {
-            "description": "ROpt+J to かな",
+            "description": "ROpt+J -> Ctrl+J",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } }
+                }
+            ]
+        },
+        {
+            "description": "ROpt+J -> かな",
             "manipulators": [
                 {
                     "type": "basic",
@@ -49,7 +59,17 @@
             ]
         },
         {
-            "description": "ROpt+L to 英数",
+            "description": "ROpt+L -> Ctrl+L",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "right_option" ] } },
+                    "to": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } }
+                }
+            ]
+        },
+        {
+            "description": "ROpt+L -> 英数",
             "manipulators": [
                 {
                     "type": "basic",
