@@ -2,6 +2,33 @@
     "title": "Misc",
     "rules": [
         {
+            "description": "macSKK for Terminal/iTerm2",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2",
+                                "^com\\.apple\\.Terminal"
+                            ],
+                            "type": "frontmost_application_if"
+                        },
+                        {
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^net\\.mtgto\\.inputmethod\\.macSKK\\.(ascii|hiragana|katakana|hankaku|eisu)$"
+                                }
+                            ],
+                            "type": "input_source_if"
+                        }
+                    ],
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "left_control" ] } },
+                    "to": [ { "key_code": "japanese_kana" } ]
+                }
+            ]
+        },
+        {
             "description": "Return を他のキーと同時押しで Fn",
             "manipulators": [
                 {
@@ -27,9 +54,9 @@
             "description": "Caps_lock -> Shift+Cmd+Opt",
             "manipulators": [
                 {
+                    "type": "basic",
                     "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
-                    "to": [ { "key_code": "left_shift", "modifiers": [ "left_command", "left_option" ] } ],
-                    "type": "basic"
+                    "to": [ { "key_code": "left_shift", "modifiers": [ "left_command", "left_option" ] } ]
                 }
             ]
         },
@@ -39,14 +66,9 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "left_command", "modifiers": { "optional": [ "any" ] } },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 2000
-                    },
+                    "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
                     "to": [ { "key_code": "left_command", "lazy": true } ],
-                    "to_if_alone": [
-                        { "key_code": "japanese_eisuu" },
-                        { "key_code": "escape" }
-                    ]
+                    "to_if_alone": [ { "key_code": "japanese_eisuu" }, { "key_code": "escape" } ]
                 }
             ]
         },
@@ -54,9 +76,9 @@
             "description": "RightShift -> Cmd+Opt",
             "manipulators": [
                 {
+                    "type": "basic",
                     "from": { "key_code": "right_shift", "modifiers": { "optional": [ "any" ] } },
-                    "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ],
-                    "type": "basic"
+                    "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ]
                 }
             ]
         },
@@ -66,10 +88,7 @@
                 {
                     "type": "basic",
                     "from": { "key_code": "escape" },
-                    "to": [
-                        { "key_code": "japanese_eisuu" },
-                        { "key_code": "escape" }
-                    ]
+                    "to": [ { "key_code": "japanese_eisuu" }, { "key_code": "escape" } ]
                 }
             ]
         }

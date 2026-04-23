@@ -2,6 +2,38 @@
     "title": "Right Option",
     "rules": [
         {
+            "description": "ROpt Only -> ESC",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [ { "key_code": "right_option", "lazy": true } ],
+                    "to_if_alone": [
+                        { "key_code": "escape" }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt Only -> 英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [ { "key_code": "right_option", "lazy": true } ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" }
+                    ]
+                }
+            ]
+        },
+        {
             "description": "ROpt Only -> 英数,ESC",
             "manipulators": [
                 {

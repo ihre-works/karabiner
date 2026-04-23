@@ -85,7 +85,7 @@
             ]
         },
         {
-            "description": "Fn + M -> DeleteForward",
+            "description": "Fn + M -> Delete_Forward",
             "manipulators": [
                 {
                     "type": "basic",

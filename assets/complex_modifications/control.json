@@ -6,8 +6,22 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "control" ], "optional" : [ "any" ] } },
-                    "to": [ { "key_code": "delete_or_backspace" } ]
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ]
                 }
             ]
         },
@@ -16,8 +30,22 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "control" ], "optional" : [ "any" ] } },
-                    "to": [ { "key_code": "return_or_enter" } ]
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ]
                 }
             ]
         },
@@ -26,8 +54,19 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } },
-                    "to": [ { "key_code": "japanese_kana" } ]
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
                 }
             ]
         },
@@ -36,9 +75,29 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "conditions": [ { "input_sources": [ { "language": "en" } ], "type": "input_source_if" } ],
-                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } },
-                    "to": [ { "key_code": "japanese_kana" } ]
+                    "conditions": [
+                        {
+                            "input_sources": [
+                                {
+                                    "language": "en"
+                                }
+                            ],
+                            "type": "input_source_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
                 }
             ]
         },
@@ -47,8 +106,19 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } },
-                    "to": [ { "key_code": "japanese_eisuu" } ]
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
                 }
             ]
         },
@@ -57,9 +127,29 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "conditions": [ { "input_sources": [ { "language": "ja" } ], "type": "input_source_if" } ],
-                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } },
-                    "to": [ { "key_code": "japanese_eisuu" } ]
+                    "conditions": [
+                        {
+                            "input_sources": [
+                                {
+                                    "language": "ja"
+                                }
+                            ],
+                            "type": "input_source_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
                 }
             ]
         },
@@ -68,10 +158,21 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "open_bracket", "modifiers": { "mandatory": [ "control" ] } },
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        }
+                    },
                     "to": [
-                        { "key_code": "japanese_eisuu" },
-                        { "key_code": "escape" }
+                        {
+                            "key_code": "japanese_eisuu"
+                        },
+                        {
+                            "key_code": "escape"
+                        }
                     ]
                 }
             ]
