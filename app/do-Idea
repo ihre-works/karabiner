@@ -1,1 +1,7 @@
+#!/bin/zsh
+[ -f ${HOME}/.env       ] && source ${HOME}/.env
+[ -f ${HOME}/.env.local ] && source ${HOME}/.env.local
+
+env > $HOME/.env.Idea
+
 open -a '/Applications/IntelliJ IDEA.app'
