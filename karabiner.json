@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps_lock -> Shift+Cmd+Opt",
+                        "description": "CapsLock -> Shift+Cmd+Opt",
                         "manipulators": [
                             {
                                 "from": {
@@ -38,7 +38,23 @@
                         ]
                     },
                     {
-                        "description": "ROpt+H to Control+H",
+                        "description": "Ctrl+[ -> 英数,ESC",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    { "key_code": "japanese_eisuu" },
+                                    { "key_code": "escape" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "ROpt+H -> Control+H",
                         "manipulators": [
                             {
                                 "from": {
@@ -56,7 +72,7 @@
                         ]
                     },
                     {
-                        "description": "ROpt+J to かな",
+                        "description": "ROpt+J -> かな",
                         "manipulators": [
                             {
                                 "from": {
@@ -69,7 +85,7 @@
                         ]
                     },
                     {
-                        "description": "ROpt+L to 英数",
+                        "description": "ROpt+L -> 英数",
                         "manipulators": [
                             {
                                 "from": {
@@ -82,24 +98,21 @@
                         ]
                     },
                     {
-                        "description": "ROpt Only to Escape",
+                        "description": "ROpt Only -> Escape",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "right_option",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
                                 "to": [
                                     {
                                         "key_code": "right_option",
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [
-                                    { "key_code": "japanese_eisuu" },
-                                    { "key_code": "escape" }
-                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -172,7 +185,7 @@
                         ]
                     },
                     {
-                        "description": "right_shift -> Cmd+Opt",
+                        "description": "RightShift -> Cmd+Opt",
                         "manipulators": [
                             {
                                 "from": {
@@ -185,26 +198,6 @@
                                         "modifiers": ["left_option"]
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Fn 単体 to LCmd",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "fn",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 2000 },
-                                "to": [
-                                    {
-                                        "key_code": "fn",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             }
                         ]
@@ -646,6 +639,26 @@
                         ]
                     },
                     {
+                        "description": "Fn 単体 -> あいう",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
+                                "to": [
+                                    {
+                                        "key_code": "fn",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "japanese_kana" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "(Finder, Skim)Fn + Ctrl + I/O -> タブ切り替え",
                         "manipulators": [
                             {
@@ -729,22 +742,6 @@
                                         "key_code": "tab",
                                         "modifiers": ["control"]
                                     }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Ctrl+[ to 英数 and Escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [
-                                    { "key_code": "japanese_eisuu" },
-                                    { "key_code": "escape" }
                                 ],
                                 "type": "basic"
                             }
@@ -839,6 +836,10 @@
                         {
                             "from": { "key_code": "japanese_kana" },
                             "to": [{ "key_code": "fn" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_eisuu" },
+                            "to": [{ "key_code": "right_option" }]
                         }
                     ]
                 },
