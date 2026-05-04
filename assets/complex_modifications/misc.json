@@ -62,12 +62,13 @@
             ]
         },
         {
-            "description": "Caps_lock -> Shift+Cmd+Opt",
+            "description": "Tab を他のキーと同時押しで RightCtrl",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
-                    "to": [ { "key_code": "left_shift", "modifiers": [ "left_command", "left_option" ] } ]
+                    "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "right_control", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "tab" } ]
                 }
             ]
         },
@@ -100,6 +101,35 @@
                     "type": "basic",
                     "from": { "key_code": "escape" },
                     "to": [ { "key_code": "japanese_eisuu" }, { "key_code": "escape" } ]
+                }
+            ]
+        },
+        {
+            "description": "Caps_lock -> WinCtrol(Shift+Cmd+Opt)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "left_shift", "modifiers": [ "left_command", "left_option" ] } ]
+                }
+            ]
+        },
+        {
+            "description": "WinCtrl+J/K -> Cmd+Tab/Cmd+Shift+Tab",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "j", "modifiers": {
+                        "mandatory": [ "command", "option", "shift" ]
+                    } },
+                    "to": [ { "key_code": "tab", "modifiers": [ "command" ] } ]
+                },
+                {
+                    "type": "basic",
+                    "from": { "key_code": "k", "modifiers": {
+                        "mandatory": [ "command", "option", "shift" ]
+                    } },
+                    "to": [ { "key_code": "tab", "modifiers": [ "command", "shift" ] } ]
                 }
             ]
         }
