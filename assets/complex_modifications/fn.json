@@ -2,6 +2,20 @@
     "title": "Fn + *",
     "rules": [
         {
+            "description": "Fn 単体 -> SPACEBAR",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [ { "key_code": "fn", "lazy": true } ],
+                    "to_if_alone": [ { "key_code": "spacebar" } ]
+                }
+            ]
+        },
+        {
             "description": "Fn 単体 -> かな",
             "manipulators": [
                 {
