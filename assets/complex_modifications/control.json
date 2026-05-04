@@ -2,71 +2,31 @@
     "title": "Ctrl",
     "rules": [
         {
-            "description": "Ctrl+H -> DeleteOrBackspace",
+            "description": "LeftCtrl+H -> DeleteOrBackspace",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": {
-                        "key_code": "h",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ],
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "delete_or_backspace"
-                        }
-                    ]
+                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "left_control" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "delete_or_backspace" } ]
                 }
             ]
         },
         {
-            "description": "Ctrl+M -> ReturnOrEnter",
+            "description": "LeftCtrl+M -> ReturnOrEnter",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": {
-                        "key_code": "m",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ],
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "return_or_enter"
-                        }
-                    ]
+                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "left_control" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "return_or_enter" } ]
                 }
             ]
         },
         {
-            "description": "Ctrl+J -> かな",
-            "manipulators": [
-                {
+            "description": "LeftCtrl+J -> かな",
+            "manipulators": [ {
                     "type": "basic",
-                    "from": {
-                        "key_code": "j",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "japanese_kana"
-                        }
-                    ]
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "left_control" ] } },
+                    "to": [ { "key_code": "japanese_kana" } ]
                 }
             ]
         },
@@ -75,50 +35,19 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "conditions": [
-                        {
-                            "input_sources": [
-                                {
-                                    "language": "en"
-                                }
-                            ],
-                            "type": "input_source_if"
-                        }
-                    ],
-                    "from": {
-                        "key_code": "j",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "japanese_kana"
-                        }
-                    ]
+                    "conditions": [ { "input_sources": [ { "language": "en" } ], "type": "input_source_if" } ],
+                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "japanese_kana" } ]
                 }
             ]
         },
         {
-            "description": "Ctrl+L -> 英数",
+            "description": "LeftCtrl+L -> 英数",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": {
-                        "key_code": "l",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "japanese_eisuu"
-                        }
-                    ]
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "left_control" ] } },
+                    "to": [ { "key_code": "japanese_eisuu" } ]
                 }
             ]
         },
@@ -127,53 +56,19 @@
             "manipulators": [
                 {
                     "type": "basic",
-                    "conditions": [
-                        {
-                            "input_sources": [
-                                {
-                                    "language": "ja"
-                                }
-                            ],
-                            "type": "input_source_if"
-                        }
-                    ],
-                    "from": {
-                        "key_code": "l",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "japanese_eisuu"
-                        }
-                    ]
+                    "conditions": [ { "input_sources": [ { "language": "ja" } ], "type": "input_source_if" } ],
+                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } },
+                    "to": [ { "key_code": "japanese_eisuu" } ]
                 }
             ]
         },
         {
-            "description": "Ctrl+[ -> 英数, ESC",
+            "description": "LeftCtrl+[ -> 英数, ESC",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": {
-                        "key_code": "open_bracket",
-                        "modifiers": {
-                            "mandatory": [
-                                "control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "japanese_eisuu"
-                        },
-                        {
-                            "key_code": "escape"
-                        }
-                    ]
+                    "from": { "key_code": "open_bracket", "modifiers": { "mandatory": [ "left_control" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "japanese_eisuu" }, { "key_code": "escape" } ]
                 }
             ]
         }
