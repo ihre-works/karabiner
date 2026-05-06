@@ -204,7 +204,7 @@
             ]
         },
         {
-            "description": "Fn + 1/2/3/4/5/6/7/8/9/0 -> F#",
+            "description": "Fn + 1/2/3/4/5/6/7/8/9/0/-/= -> F#",
             "manipulators": [
                 {
                     "type": "basic",
@@ -255,6 +255,16 @@
                     "type": "basic",
                     "from": { "key_code": "0", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
                     "to": [ { "key_code": "f10" } ]
+                },
+                {
+                    "type": "basic",
+                    "from": { "key_code": "hyphen", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "f11" } ]
+                },
+                {
+                    "type": "basic",
+                    "from": { "key_code": "equal_sign", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
+                    "to": [ { "key_code": "f12" } ]
                 }
             ]
         },

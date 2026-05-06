@@ -62,7 +62,7 @@
             ]
         },
         {
-            "description": "Tab を他のキーと同時押しで RightCtrl",
+            "description": "Tab を他のキーと同時押しで RCtrl",
             "manipulators": [
                 {
                     "type": "basic",
@@ -85,11 +85,21 @@
             ]
         },
         {
-            "description": "RightShift -> Cmd+Opt",
+            "description": "RShift -> Cmd+Opt",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": { "key_code": "right_shift", "modifiers": { "optional": [ "any" ] } },
+                    "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ]
+                }
+            ]
+        },
+        {
+            "description": "ROpt -> Cmd+Opt",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
                     "to": [ { "key_code": "left_command", "modifiers": [ "left_option" ] } ]
                 }
             ]
