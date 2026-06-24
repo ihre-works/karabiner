@@ -4,6 +4,20 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "英数キー単押しで Escape、同時押しで Ctrl",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "japanese_eisuu",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "RShift -> Cmd+Opt",
                         "manipulators": [
                             {
@@ -715,10 +729,6 @@
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "japanese_eisuu" },
-                            "to": [{ "key_code": "escape" }]
-                        },
-                        {
                             "from": { "key_code": "japanese_kana" },
                             "to": [{ "key_code": "fn" }]
                         }
@@ -753,7 +763,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "escape" }]
+                            "to": [{ "key_code": "japanese_eisuu" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
@@ -830,7 +840,7 @@
                         },
                         {
                             "from": { "key_code": "japanese_pc_nfer" },
-                            "to": [{ "key_code": "escape" }]
+                            "to": [{ "key_code": "japanese_eisuu" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
@@ -940,6 +950,10 @@
                         {
                             "from": { "key_code": "caps_lock" },
                             "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "escape" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_katakana" },
