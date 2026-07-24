@@ -1,0 +1,206 @@
+{
+    "title": "日本語コントロール",
+    "rules": [
+        {
+            "description": " Fn ONLY -> かな, \n 英数 ONLY -> 英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [
+                        { "key_code": "fn", "lazy": true }
+                    ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_kana" }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_eisuu"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" }
+                    ],
+                    "to_if_held_down": [
+                        { "key_code": "left_control", "modifiers": [ "left_shift" ] }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " Fn ONLY -> かな, \n RControl ONLY -> 英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "key_code": "fn", "modifiers": { "optional": [ "any" ] } },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [
+                        { "key_code": "fn", "lazy": true }
+                    ],
+                    "to_if_alone": [
+                        { "key_code": "japanese_kana" }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_control"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to_if_alone": [
+                        { "key_code": "japanese_eisuu" }
+                    ],
+                    "to_if_held_down": [
+                        { "key_code": "right_control", "modifiers": [ "left_shift" ] }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " ROpt+J -> かな\n ROpt+L -> 英数\n ROpt+; -> Shift + 英数\n ROpt+K -> Shift + かな",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_kana" }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": { "mandatory": [ "right_option" ], "optional": [ "any" ] }
+                    },
+                    "to": { "key_code": "japanese_eisuu" }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": { "mandatory": [ "right_option" ] }
+                    },
+                    "to": { "key_code": "japanese_eisuu", "modifiers": [ "shift" ] }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": { "mandatory": [ "right_option" ] }
+                    },
+                    "to": { "key_code": "japanese_kana", "modifiers": [ "shift" ] }
+                }
+            ]
+        },
+        {
+            "description": " LCtrl+J -> かな\n LCtrl+; -> 英数\n LCtrl+L -> Shift + 英数\n LCtrl+K -> Shift + かな",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_kana" }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_eisuu" }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_eisuu", "modifiers": [ "shift" ] }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_kana", "modifiers": [ "shift" ] }
+                }
+            ]
+        },
+        {
+            "description": "  ROpt+J -> Ctrl+J\n ROpt+; -> Ctrl+;\n ROpt+L -> Ctrl+L\n ROpt+K -> Ctrl+K",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "j", "modifiers": [ "control" ] }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "semicolon", "modifiers": [ "control" ] }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "l", "modifiers": [ "control" ] }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ]
+                        }
+                    },
+                    "to": { "key_code": "k", "modifiers": [ "control" ] }
+                }
+            ]
+        }
+    ]
+}

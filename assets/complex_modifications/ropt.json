@@ -2,38 +2,6 @@
     "title": "Right Option",
     "rules": [
         {
-            "description": "ROpt Only -> ESC",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 200
-                    },
-                    "to": [ { "key_code": "right_option", "lazy": true } ],
-                    "to_if_alone": [
-                        { "key_code": "escape" }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "ROpt Only -> 英数",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "right_option", "modifiers": { "optional": [ "any" ] } },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 200
-                    },
-                    "to": [ { "key_code": "right_option", "lazy": true } ],
-                    "to_if_alone": [
-                        { "key_code": "japanese_eisuu" }
-                    ]
-                }
-            ]
-        },
-        {
             "description": "ROpt Only -> 英数,ESC",
             "manipulators": [
                 {
@@ -51,62 +19,20 @@
             ]
         },
         {
-            "description": "ROpt+H -> Control+H",
+            "description": "ROpt+SPC -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
-                    "from": { "key_code": "h", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": [ { "key_code": "h", "modifiers": [ "left_control" ] } ]
-                }
-            ]
-        },
-        {
-            "description": "ROpt+M -> ReturnOrEnter",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "m", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": [ { "key_code": "return_or_enter" } ]
-                }
-            ]
-        },
-        {
-            "description": "ROpt+J -> Ctrl+J",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": { "key_code": "j", "modifiers": { "mandatory": [ "control" ] } }
-                }
-            ]
-        },
-        {
-            "description": "ROpt+J -> かな",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "j", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": [ { "key_code": "japanese_kana" } ]
-                }
-            ]
-        },
-        {
-            "description": "ROpt+L -> Ctrl+L",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": { "key_code": "l", "modifiers": { "mandatory": [ "control" ] } }
-                }
-            ]
-        },
-        {
-            "description": "ROpt+L -> 英数",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": { "key_code": "l", "modifiers": { "mandatory": [ "right_option" ] } },
-                    "to": [ { "key_code": "japanese_eisuu" } ]
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": [ "right_option" ]
+                        }
+                    },
+                    "to": [
+                        { "key_code": "japanese_eisuu" },
+                        { "key_code": "escape" }
+                    ]
                 }
             ]
         }
