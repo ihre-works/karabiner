@@ -2,7 +2,7 @@
   "title": "英数キー",
   "rules": [
     {
-      "description": "英数キー単押しで Escape、同時押しで Ctrl",
+      "description": "英数 Only -> Escape / 英数 + ? -> Ctrl",
       "manipulators": [
         {
           "type": "basic",
@@ -12,17 +12,20 @@
               "optional": ["any"]
             }
           },
-          "to": [
-            { "key_code": "left_control" }
-          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200
+          },
           "to_if_alone": [
             { "key_code": "escape" }
+          ],
+          "to": [
+            { "key_code": "left_control" }
           ]
         }
       ]
     },
     {
-      "description": "英数キー単押しで EISU+Escape、同時押しで Ctrl",
+      "description": "英数 Only -> EISU,Escape / 英数 + ? -> Ctrl",
       "manipulators": [
         {
           "type": "basic",
@@ -32,18 +35,21 @@
               "optional": ["any"]
             }
           },
-          "to": [
-            { "key_code": "left_control" }
-          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200
+          },
           "to_if_alone": [
             { "key_code": "japanese_eisuu" },
             { "key_code": "escape" }
+          ],
+          "to": [
+            { "key_code": "left_control" }
           ]
         }
       ]
     },
     {
-      "description": "英数キー短押しで EISU、同時押しで Ctrl+Shift",
+      "description": "英数 Only -> EISU / 英数 + ? -> Ctrl+Shift",
       "manipulators": [
         {
           "type": "basic",
@@ -56,7 +62,7 @@
           "to_if_alone": [
             { "key_code": "japanese_eisuu" }
           ],
-          "to_if_held_down": [
+          "to": [
             {
               "key_code": "left_control",
               "modifiers": [ "left_shift" ]
@@ -66,7 +72,7 @@
       ]
     },
     {
-      "description": "英数キー短押しで EISU+Escape、同時押しで Ctrl+Shift",
+      "description": "英数 Only -> EISU,Escape / 英数 + ? -> Ctrl+Shift",
       "manipulators": [
         {
           "type": "basic",
@@ -80,7 +86,7 @@
             { "key_code": "japanese_eisuu" },
             { "key_code": "escape" }
           ],
-          "to_if_held_down": [
+          "to": [
             {
               "key_code": "left_control",
               "modifiers": [ "left_shift" ]

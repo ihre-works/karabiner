@@ -68,7 +68,7 @@
             ]
         },
         {
-            "description": " ROpt+J -> かな\n ROpt+L -> 英数\n ROpt+; -> Shift + 英数\n ROpt+K -> Shift + かな",
+            "description": " ROpt+J -> かな\n ROpt+; -> 英数\n ROpt+L -> Shift + 英数\n ROpt+K -> Shift + かな",
             "manipulators": [
                 {
                     "type": "basic",
@@ -84,7 +84,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "l",
+                        "key_code": "semicolon",
                         "modifiers": { "mandatory": [ "right_option" ], "optional": [ "any" ] }
                     },
                     "to": { "key_code": "japanese_eisuu" }
@@ -92,7 +92,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "semicolon",
+                        "key_code": "l",
                         "modifiers": { "mandatory": [ "right_option" ] }
                     },
                     "to": { "key_code": "japanese_eisuu", "modifiers": [ "shift" ] }
@@ -108,6 +108,33 @@
             ]
         },
         {
+            "description": " LCtrl+J -> かな\n LCtrl+; -> 英数",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_kana" }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [ "left_control" ],
+                            "optional": [ "any" ]
+                        }
+                    },
+                    "to": { "key_code": "japanese_eisuu" }
+                }
+            ]
+        },
+	{
             "description": " LCtrl+J -> かな\n LCtrl+; -> 英数\n LCtrl+L -> Shift + 英数\n LCtrl+K -> Shift + かな",
             "manipulators": [
                 {
@@ -124,7 +151,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "l",
+                        "key_code": "semicolon",
                         "modifiers": {
                             "mandatory": [ "left_control" ],
                             "optional": [ "any" ]
@@ -135,7 +162,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "semicolon",
+                        "key_code": "l",
                         "modifiers": {
                             "mandatory": [ "left_control" ]
                         }
@@ -155,7 +182,7 @@
             ]
         },
         {
-            "description": "  ROpt+J -> Ctrl+J\n ROpt+; -> Ctrl+;\n ROpt+L -> Ctrl+L\n ROpt+K -> Ctrl+K",
+            "description": " ROpt+J -> Ctrl+J\n ROpt+; -> Ctrl+;\n ROpt+L -> Ctrl+L\n ROpt+K -> Ctrl+K",
             "manipulators": [
                 {
                     "type": "basic",

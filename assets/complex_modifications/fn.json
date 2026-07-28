@@ -2,7 +2,7 @@
     "title": "Fn + *",
     "rules": [
         {
-            "description": "Fn 単体 -> SPACEBAR",
+            "description": "Fn Only -> SPACEBAR",
             "manipulators": [
                 {
                     "type": "basic",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "description": "Fn 単体 -> かな",
+            "description": "Fn Only -> かな",
             "manipulators": [
                 {
                     "type": "basic",
@@ -30,7 +30,7 @@
             ]
         },
         {
-            "description": "Fn 単体 -> LCmd",
+            "description": "Fn Only -> LCmd",
             "manipulators": [
                 {
                     "type": "basic",
@@ -265,35 +265,6 @@
                     "type": "basic",
                     "from": { "key_code": "equal_sign", "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] } },
                     "to": [ { "key_code": "f12" } ]
-                }
-            ]
-        },
-        {
-            "description": "(Finder, Skim)Fn + Ctrl + I/O -> タブ切り替え",
-            "manipulators": [
-                {
-                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ] } ],
-                    "type": "basic",
-                    "from": { "key_code": "i", "modifiers": { "mandatory": [ "fn", "control" ] } },
-                    "to": [ { "key_code": "tab", "modifiers": [ "control", "shift" ] } ]
-                },
-                {
-                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "net\\.sourceforge\\.skim-app\\.skim" ] } ],
-                    "type": "basic",
-                    "from": { "key_code": "o", "modifiers": { "mandatory": [ "fn", "control" ] } },
-                    "to": [ { "key_code": "tab", "modifiers": [ "control" ] } ]
-                },
-                {
-                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "com\\.apple\\.finder" ] } ],
-                    "type": "basic",
-                    "from": { "key_code": "i", "modifiers": { "mandatory": [ "fn", "control" ] } },
-                    "to": [ { "key_code": "tab", "modifiers": [ "control", "shift" ] } ]
-                },
-                {
-                    "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "com\\.apple\\.finder" ] } ],
-                    "type": "basic",
-                    "from": { "key_code": "o", "modifiers": { "mandatory": [ "fn", "control" ] } },
-                    "to": [ { "key_code": "tab", "modifiers": [ "control" ] } ]
                 }
             ]
         }
