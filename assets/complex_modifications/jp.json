@@ -2,7 +2,7 @@
     "title": "日本語コントロール",
     "rules": [
         {
-            "description": " Fn ONLY -> かな, \n 英数 ONLY -> 英数",
+            "description": "Fn ONLY -> かな\n英数 ONLY -> 英数",
             "manipulators": [
                 {
                     "type": "basic",
@@ -35,7 +35,7 @@
             ]
         },
         {
-            "description": " Fn ONLY -> かな, \n RControl ONLY -> 英数",
+            "description": "Fn ONLY -> かな, \nRControl ONLY -> 英数",
             "manipulators": [
                 {
                     "type": "basic",
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "description": " ROpt+J -> かな\n ROpt+; -> 英数\n ROpt+L -> Shift + 英数\n ROpt+K -> Shift + かな",
+            "description": "ROpt+J -> かな\nROpt+; -> 英数\nROpt+L -> Shift + 英数\nROpt+K -> Shift + かな",
             "manipulators": [
                 {
                     "type": "basic",
@@ -108,7 +108,7 @@
             ]
         },
         {
-            "description": " LCtrl+J -> かな\n LCtrl+; -> 英数",
+            "description": "LCtrl+J -> かな\nLCtrl+; -> 英数",
             "manipulators": [
                 {
                     "type": "basic",
@@ -135,7 +135,7 @@
             ]
         },
 	{
-            "description": " LCtrl+J -> かな\n LCtrl+; -> 英数\n LCtrl+L -> Shift + 英数\n LCtrl+K -> Shift + かな",
+            "description": "LCtrl+J -> かな\nLCtrl+; -> 英数\nLCtrl+L -> Shift + 英数\nLCtrl+K -> Shift + かな",
             "manipulators": [
                 {
                     "type": "basic",
@@ -182,7 +182,7 @@
             ]
         },
         {
-            "description": " ROpt+J -> Ctrl+J\n ROpt+; -> Ctrl+;\n ROpt+L -> Ctrl+L\n ROpt+K -> Ctrl+K",
+            "description": "ROpt+J -> Ctrl+J\nROpt+; -> Ctrl+;\nROpt+L -> Ctrl+L\nROpt+K -> Ctrl+K",
             "manipulators": [
                 {
                     "type": "basic",
