@@ -1,37 +1,13 @@
 {
-    "title": "Right Option",
+    "title": "Right Control",
     "rules": [
         {
-            "description": "ROpt -> Cmd+Opt",
+            "description": "RCtrl Only -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "right_option",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_command",
-                            "modifiers": [
-                                "left_option"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "ROpt Only -> 英数,ESC",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "right_option",
+                        "key_code": "right_control",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -43,7 +19,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "right_option",
+                            "key_code": "right_control",
                             "lazy": true
                         }
                     ],
@@ -59,12 +35,12 @@
             ]
         },
         {
-            "description": "ROpt -> 英数,ESC",
+            "description": "RCtrl -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "right_option",
+                        "key_code": "right_control",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -83,7 +59,7 @@
             ]
         },
         {
-            "description": "ROpt+SPC -> 英数,ESC",
+            "description": "RCtrl+SPC -> 英数,ESC",
             "manipulators": [
                 {
                     "type": "basic",
@@ -91,7 +67,10 @@
                         "key_code": "spacebar",
                         "modifiers": {
                             "mandatory": [
-                                "right_option"
+                                "right_control"
+                            ],
+                            "optional": [
+                                "any"
                             ]
                         }
                     },

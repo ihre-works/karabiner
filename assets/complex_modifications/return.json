@@ -1,0 +1,69 @@
+{
+    "title": "ReturnOrEnter",
+    "rules": [
+        {
+            "description": "Return Only -> Return / Return + ? -> Command+Option + ?",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Return Only -> Return / Return + ? -> Control+?",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

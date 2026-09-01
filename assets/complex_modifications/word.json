@@ -1,0 +1,33 @@
+{
+  "title": "Word: Ctrl+Space → Option+Shift+;",
+  "rules": [
+    {
+      "description": "In Word, convert Ctrl+Space to Option+Shift+;",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": ["option", "shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Word$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

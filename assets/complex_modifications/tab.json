@@ -1,0 +1,28 @@
+{
+  "title": "ReturnOrEnter/TAB",
+  "rules": [
+    {
+      "description": "TAB Only -> TAB / TAB+? -> Control+Shift+?",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab"
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200
+          },
+          "to_if_alone": [
+            { "key_code": "tab" }
+          ],
+          "to": [
+            {
+              "key_code": "left_control",
+              "modifiers": [ "left_shift" ]
+            }
+          ]
+        }
+      ]
+    },
+  ]
+}
