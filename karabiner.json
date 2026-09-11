@@ -4,6 +4,27 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "OneNote: Ctrl+G -> Escape",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.onenote\\.mac$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "LCtrl+J -> かな\nLCtrl+; -> 英数",
                         "manipulators": [
                             {
