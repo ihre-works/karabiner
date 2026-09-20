@@ -4,6 +4,29 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "RCtrl Only -> 英数,ESC",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
+                                "to": [
+                                    {
+                                        "key_code": "right_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    { "key_code": "japanese_eisuu" },
+                                    { "key_code": "escape" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "OneNote: Ctrl+G -> Escape",
                         "manipulators": [
                             {
@@ -105,26 +128,6 @@
                                         "modifiers": ["left_option"]
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "RCtrl Only -> 英数",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "right_control",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
                                 "type": "basic"
                             }
                         ]
@@ -860,6 +863,10 @@
                             "to": [{ "key_code": "left_shift" }]
                         },
                         {
+                            "from": { "key_code": "international3" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
                             "from": { "key_code": "japanese_pc_katakana" },
                             "to": [{ "key_code": "right_command" }]
                         },
@@ -874,10 +881,6 @@
                         {
                             "from": { "key_code": "left_option" },
                             "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "international3" },
-                            "to": [{ "key_code": "grave_accent_and_tilde" }]
                         }
                     ]
                 },
