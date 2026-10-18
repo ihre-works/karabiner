@@ -2,7 +2,7 @@
     "title": "アプリケーション依存",
     "rules": [
         {
-            "description": "Finder: Ctrl+Fn+I/O -> Shift+Ctrl+Tab / Ctrl+Tab",
+            "description": "Finder,Skim,Safari: Ctrl+Fn+I/O -> Shift+Ctrl+Tab / Ctrl+Tab",
             "manipulators": [
                 {
                     "type": "basic",
@@ -28,7 +28,8 @@
                             "type": "frontmost_application_if",
                             "bundle_identifiers": [
                                 "^net\\.sourceforge\\.skim-app\\.skim$",
-                                "^com\\.apple\\.finder$"
+                                "^com\\.apple\\.finder$",
+                                "^com\\.apple\\.Safari$"
                             ]
                         }
                     ]
@@ -58,7 +59,8 @@
                             "type": "frontmost_application_if",
                             "bundle_identifiers": [
                                 "^net\\.sourceforge\\.skim-app\\.skim$",
-                                "^com\\.apple\\.finder$"
+                                "^com\\.apple\\.finder$",
+                                "^com\\.apple\\.Safari$"
                             ]
                         }
                     ]
